@@ -1,0 +1,125 @@
+body {
+    background: rgb(220, 220, 220);
+    height: 100vh;
+    margin: 0px;
+}
+
+#calculator {
+    background: rgb(50, 50, 50);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 370px; height: 560px;
+    position: fixed;
+    top: 50%; left: 50%;
+    translate: -50% -50%;
+    user-select: none;
+}
+
+#display {
+    width: 100%; height: 18%;
+    font-size: 30px;
+    margin-bottom: 15px;
+    border-radius: 10px; border: none;
+    text-align: left; text-indent: 5%;
+    background: hsl(120, 35%, 28%);
+    color: white; pointer-events: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(80, 80, 80);
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: rgb(105, 105, 105);
+}
+
+.operator {
+    background: #ff9500;
+}
+
+.equal {
+    background: #28a745;
+}
+
+.top-bar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.panel {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    translate: -50% -50%;
+    background: #2c2c3e;
+    padding: 30px; border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; user-select: none;
+}
+
+@keyframes fade-in{
+    from{ opacity: 0; }to{opacity: 1; }
+}
+
+@keyframes fade-out{
+    from{ opacity: 1; }to{opacity: 0; }
+}
+
+
+#history-tab {
+    width: 400px;
+    display: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2c2c3e;
+    padding: 20px;
+    padding-left: 0; padding-right: 0;
+    border-radius: 15px;
+    user-select: none;
+}
+
+.hist-grid-btn {
+    background: #555;
+}
+
+#history-btn-grid {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#history-btn-grid button {
+    width: 100%; height: 60px;
+    border-radius: 0px;
+    background-color: transparent;
+    transition: 0.1s; font-size: 25px;
+}
+
+#history-btn-grid button:hover {
+    background-color: hsl(240, 17%, 30%);
+}
+
+#history-bar {
+    display: flex; gap: 15px;
+    flex-direction: row;
+    justify-content: center;
+}
+

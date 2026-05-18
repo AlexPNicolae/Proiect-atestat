@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scientific Calculator</title>
+    <link href = "calc_style.css" rel = "stylesheet"/>
+</head>
+
+<body>
+    <div id="calculator">
+
+        <input id="display" readonly>
+
+        <div class="top-bar">
+            <button onclick="open_history()">History</button>
+            <button id="func-btn">Functions</button>
+            <button id="trig-btn">Trig</button>
+            <button id="close-table-btn">Close</button>
+        </div>
+
+        <div class="grid">
+
+            <button onclick= "appendToDisplay('2.7183')" style = "position: relative;">
+                <img src = "euler e icon.png" style = "position: absolute; width:28px;
+                    top: 50%; left: 50%; translate: -50% -50%; 
+                    aspect-ratio: 1 / 1; filter: brightness(1.4);
+                "/>
+            </button>
+
+            <button onclick= "appendToDisplay('3.1415')" style = "position: relative;">
+                <img src = "pi icon.png" style = "position: absolute; width: 20px;
+                    top: 50%; left: 50%; translate: -50% -50%; 
+                    aspect-ratio: 1 / 1; filter: brightness(1.4);
+                "/>
+            </button>
+
+            <button id = "open-bracket-btn"></button>
+            <button id = "close-bracket-btn"></button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equal">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteChar()">⌫</button>
+            <button onclick="undoAction()">Undo</button>
+            <button onclick="redoAction()">Redo</button>
+        </div>
+    </div>
+
+    <div id="func-table" class="panel">
+        <button onclick="raise_to_power(2)">x²</button>
+        <button onclick="raise_to_power(3)">x³</button>
+        <button onclick="raise_to_power(-1)">1/x</button>
+        <button onclick="root(2)">√</button>
+        <button onclick="root(3)">∛</button>
+        <button onclick="factorial()">n!</button>
+        <button onclick="absoluteValue()">|x|</button>
+        <button onclick="exponentiate(2)">2<sup>x</sup></button>
+        <button onclick = "exponentiate(10)">10<sup>x</sup></button>
+        <button onclick="log(10)">log<sub>10</sub></button>
+        <button onclick="log(2)">log<sub>2</sub></button>
+        <button onclick="log(2.718)">ln</button>
+    </div>
+
+    <div id="trig-table" class="panel">
+        <button onclick="Sin()">sin</button>
+        <button onclick="Cos()">cos</button>
+        <button onclick="Tan()">tan</button>
+        <button onclick="Cot()">cot</button>
+        <button onclick="Sec()">sec</button>
+        <button onclick="Cosec()">cosec</button>
+        <button onclick="Arcsin()">asin</button>
+        <button onclick="Arccos()">acos</button>
+        <button onclick="Arctan()">atan</button>
+        <button onclick="Arccot()">acot</button>
+        <button onclick="ConvertRad()">→Rad</button>
+        <button onclick="ConvertDeg()">→Deg</button>
+    </div>
+
+    <div id="history-tab">
+        <div id = "history-bar">
+            <button onclick="close_history()">Back</button>
+            <button onclick="clear_history()">Clear</button>
+            <button onclick="delete_last_from_history()">Delete Last</button>
+        </div>
+
+        <div id = "history-btn-grid"> </div>
+    </div>
+
+
+    <script src="calc_script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> Proiect de atestat </title>
+        <link href = "style.css" rel = "stylesheet"/>
+    </head>
+
+    <body>
+        <canvas> </canvas>
+
+        <div id = 'card-container'>
+            <div class = 'card'>
+                <img src = 'calculator_cover.png'/>
+                <a href = 'calculator.html'> Calculator </a>
+            </div>
+
+            <div class = 'card'>
+                <img src = 'polinom_cover.png'/>
+                <a href = 'poly.html'> Polinom </a>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
+        ctx.lineWidth = 1;
+        ctx.fillStyle = 'hsl(224, 37%, 5%)';
+        ctx.strokeStyle = 'rgba(171, 205, 239, 0.3)';
+
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const grid_size = {
+            x: 30, y: 30 * canvas.height / canvas.width
+        };
+        
+        ctx.beginPath();
+
+        const delta_x = canvas.width / grid_size.x;
+        const delta_y = canvas.height / grid_size.y;
+        let x = delta_x, y = delta_y;
+
+        while(x < canvas.width){
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, canvas.height);
+            x += delta_x;
+        }
+       
+        while(y < canvas.height){
+            ctx.moveTo(0, y);
+            ctx.lineTo(canvas.width, y);
+            y += delta_y;
+        }
+            
+        ctx.stroke();
+        
+    </script>
+
+</html>
