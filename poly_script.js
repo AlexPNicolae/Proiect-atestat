@@ -377,7 +377,7 @@ function onInput()
         sizeHeader.textContent = 'Grad: ' + n.toString();
         rangeInput.value = n;
         updateSlider();
-
+        console.log('bbb');
         solve(); 
         update_point();
         draw_poly();
