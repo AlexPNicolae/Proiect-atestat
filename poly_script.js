@@ -377,13 +377,12 @@ function onInput()
         sizeHeader.textContent = 'Grad: ' + n.toString();
         rangeInput.value = n;
         updateSlider();
-        console.log('bbb');
+       
         solve(); 
         update_point();
         draw_poly();
         return;
     }
-    console.log('aaa');
     while(coef.length > 0) coef.pop();
 
     Array.from(coefContainer.querySelectorAll('.coef-input'))
@@ -393,7 +392,7 @@ function onInput()
             coef.unshift(val);
         });
     while(rad.length > 0) rad.pop();
-    solve();
+    //solve();
     update_point();
     draw_poly();
 }
