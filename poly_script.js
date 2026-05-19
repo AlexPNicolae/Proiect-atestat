@@ -365,6 +365,7 @@ function draw_poly()
 
 function onInput()
 {
+    return;
     const c = Number(coefContainer.querySelector('.coef-input').querySelector('input').value);
     if((isNaN(c) || c == 0) && coef.filter((c, i) => i < n && !isNaN(c) && c != 0).length > 0){
         coef.pop(); n--;
