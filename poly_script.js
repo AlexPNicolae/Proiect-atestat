@@ -365,7 +365,6 @@ function draw_poly()
 
 function onInput()
 {
-    return;
     const c = Number(coefContainer.querySelector('.coef-input').querySelector('input').value);
     if((isNaN(c) || c == 0) && coef.filter((c, i) => i < n && !isNaN(c) && c != 0).length > 0){
         coef.pop(); n--;
@@ -379,9 +378,9 @@ function onInput()
         rangeInput.value = n;
         updateSlider();
         
-        //solve(); 
-        //update_point();
-        //draw_poly();
+        solve(); 
+        update_point();
+        draw_poly();
         return;
     }
     while(coef.length > 0) coef.pop();
@@ -393,9 +392,9 @@ function onInput()
             coef.unshift(val);
         });
     while(rad.length > 0) rad.pop();
-    //solve();
-    //update_point();
-    //draw_poly();
+    solve();
+    update_point();
+    draw_poly();
 }
 
 
