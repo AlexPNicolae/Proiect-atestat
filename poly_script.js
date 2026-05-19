@@ -377,10 +377,10 @@ function onInput()
         sizeHeader.textContent = 'Grad: ' + n.toString();
         rangeInput.value = n;
         updateSlider();
-       
-        solve(); 
-        update_point();
-        draw_poly();
+        
+        //solve(); 
+        //update_point();
+        //draw_poly();
         return;
     }
     while(coef.length > 0) coef.pop();
@@ -393,8 +393,8 @@ function onInput()
         });
     while(rad.length > 0) rad.pop();
     //solve();
-    update_point();
-    draw_poly();
+    //update_point();
+    //draw_poly();
 }
 
 
