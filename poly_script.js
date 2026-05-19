@@ -383,6 +383,7 @@ function onInput()
         draw_poly();
         return;
     }
+    console.log('aaa');
     while(coef.length > 0) coef.pop();
 
     Array.from(coefContainer.querySelectorAll('.coef-input'))
