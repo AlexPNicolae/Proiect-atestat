@@ -434,8 +434,8 @@ rangeInput.addEventListener('input', event => {
 
     point.x = 0;
     point.y = 0;
-    xInput.value = '0'; yInput.value = '0';
-    draw_point();
+    //xInput.value = '0'; yInput.value = '0';
+    //draw_point();
 
     const num_coefs = get_num_coefs();
 
